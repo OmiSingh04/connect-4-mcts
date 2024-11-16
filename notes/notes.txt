@@ -1,0 +1,54 @@
+WE ARE TOTALLY DITCHING THE 2048 GAME. THE STATE SPACE IS TOO LARGE.
+SOMETHING MORE MANAGEABLE AND SOMEWHAT SIMPLER IS CONNECT FOUR.
+
+I ALSO HAVE FOUND AN API WHICH RESPONDS WITH BEST SCORES FOR THE MOVES.
+
+I CAN SIMPLY GET THE BEST MOVE FROM ARGMAX.
+
+the goal right now is to simply build the game. entirely.
+Which means build the MDP.
+
+
+
+
+how does the API work??
+
+there are two defined endpoints,
+
+1) get moves - 
+  get the suggested moves from thing.
+
+  http://localhost:8009/index.php/getMoves?board_data=0000000000000000020000001200000210000021001012100&player=2
+
+
+0 represents empty space.
+1 represents player 1
+2 represents player 2
+
+
+how is the (6 x 7) board specified?
+
+0000000
+0000000
+0002000
+0001200
+0002100
+0002100
+1012100
+
+literally that, but write all those in that sequence in the same line
+player=2
+
+
+
+
+
+
+
+a fairly big change is that i cant use np.arrays as dict keys.
+we can use tuples.
+lets use tuples - format
+take the state ((6, 7))
+flatten it, and tuple
+d[tuple(state.flatten())] = whatever
+load and save policy

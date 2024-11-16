@@ -1,0 +1,5 @@
+# the opponent to train the ai
+bot_api/
+
+# the resultant Q-function from training
+outputs/
